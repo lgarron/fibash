@@ -10,9 +10,12 @@ Goals:
   - Fail on command error by default.
   - Enforce good string escaping practices.
   - Enforce good practices for piping, process substitution, status checks, and logic.
+  - Handle [`echo` pitfalls](https://www.youtube.com/watch?v=lq98MM2ogBk)?
 - Accept a strict subset of `fish`.
   - Concession: it may be worth adding small extensions that can be compiled into `fish` as well as `bash`.
 - Output idiomatic `bash` where possible.
+- Implement in a portable, safe language (Rust).
+- Fast compilation.
 
 Stretch goals:
 
@@ -35,3 +38,20 @@ Non-goals:
   - Dotfile ["bootstrap"](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles) scripts
 - One-off scripts that need to be portable above else.
 - Scritps for lightweight projects that don't want to require additional dependencies.
+
+## Prior art
+
+- [Batsh](https://github.com/batsh-dev-team/Batsh)
+  - Requires OCaml. I hard trouble installing this myself, and it was missing [one of the first features I needed](https://github.com/batsh-dev-team/Batsh/issues/89).
+  - Uses significant custom syntax.
+- [`bish`](https://github.com/tdenniston/bish)
+  - Unmaintained.
+  - Uses significant custom syntax.
+- [`powscript`](https://github.com/coderofsalvation/powscript)
+  - Uses significant custom syntax.
+  - Requires `bash` 4, which is not available on macOS by default.
+
+Also see:
+
+- https://stackoverflow.com/questions/10239235/are-there-any-languages-that-compile-to-bash
+- https://github.com/fish-shell/fish-shell/issues/1420
